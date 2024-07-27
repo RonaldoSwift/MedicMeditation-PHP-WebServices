@@ -18,6 +18,7 @@ switch ($method) {
 }
 //Este servicio se usa para el Sign Up de aplicaciones
 function handlePost($pdo, $input) {
+    //
     $sql = "INSERT INTO user (id, name, email, password) VALUES (:id, :name, :email, :password)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $input['id'],'name' => $input['name'],'email' => $input['email'],'password' => $input['password']]);
